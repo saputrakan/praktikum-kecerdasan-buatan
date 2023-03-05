@@ -1,0 +1,36 @@
+anak(roy, rudi).
+anak(roy, asiah).
+anak(ali, roy).
+anak(ali, uun).
+anak(imas, roy).
+anak(imas, uun).
+anak(siti, nuni).
+anak(siti, ali).
+anak(sukri, nuni).
+anak(sukri, ali).
+anak(jaya, imas).
+anak(jaya, budi).
+laki(rudi).
+laki(roy).
+laki(ali).
+laki(budi).
+laki(sukri).
+laki(jaya).
+perempuan(asiah).
+perempuan(uun).
+perempuan(nuni).
+perempuan(imas).
+perempuan(siti).
+menikah(rudi, asiah).
+menikah(asiah, rudi).
+menikah(roy, uun).
+menikah(uun, roy).
+menikah(nuni, ali).
+menikah(ali, nuni).
+menikah(imas, budi).
+menikah(budi, imas).
+orangtua(A, B):-menikah(A, C), anak(B, A).
+kakeknenek(A, B):-orangtua(C, B), anak(C, A).
+nenekmoyang(A, B):-kakeknenek(C, B),anak(C, A),perempuan(A).
+saudara(A, B):-anak(B, C), anak(A, C).
+ipar(A, B):-saudara(B, C), menikah(C, A).

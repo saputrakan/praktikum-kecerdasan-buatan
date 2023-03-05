@@ -1,0 +1,9 @@
+bawahanlangsung(burhan, adi).
+bawahanlangsung(bahrun, burhan).
+bawahanlangsung(bisrin, burhan).
+bawahanlangsung(fahri, bahrun).
+bawahanlangsung(farah, bahrun).
+bawahanlangsung(ferdi, bisrin).
+atasanlangsung(A, B):-bawahanlangsung(B, A).
+anakbuah(A, B):-atasanlangsung(B, A).
+anakbuah(A, B):-atasanlangsung(Z, A), bawahanlangsung(Z, B).
