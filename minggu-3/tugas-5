@@ -1,0 +1,12 @@
+is_a(man, person).
+is_a(woman, person).
+is_a(oscar, man).
+is_a(antje, woman).
+is_married_to(oscar, antje).
+is_married_to(antje, oscar).
+is_father_of(oscar, bernd).
+is_mother_of(antje, bernd).
+is_aunt_of(antje, susi).
+is_cousin_of(bernd, susi).
+is_cousin_of(susi, bernd).
+is_uncle_of(oscar, susi).

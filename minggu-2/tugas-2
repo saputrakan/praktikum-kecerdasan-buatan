@@ -29,8 +29,9 @@ menikah(nuni, ali).
 menikah(ali, nuni).
 menikah(imas, budi).
 menikah(budi, imas).
-orangtua(A, B):-menikah(A, C), anak(B, A).
+orangtua(A, B):-anak(B, A).
 kakeknenek(A, B):-orangtua(C, B), anak(C, A).
 nenekmoyang(A, B):-kakeknenek(C, B),anak(C, A),perempuan(A).
-saudara(A, B):-anak(B, C), anak(A, C).
-ipar(A, B):-saudara(B, C), menikah(C, A).
+saudara(A, B):-anak(B, C), anak(A, C), A\==B.
+ipar(A, B):-saudara(C, B), menikah(C, A).
+ipar(A, B):-menikah(B, C), saudara(C, D), menikah(D, A).

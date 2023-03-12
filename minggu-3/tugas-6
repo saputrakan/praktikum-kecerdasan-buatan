@@ -1,0 +1,21 @@
+an_instance(garfield, cat).
+an_instance(sylveator, cat).
+an_instance(opus, pinguin).
+an_instance(tweety, canary).
+eats(garfield, lasagna).
+eats(X, catfood):-an_instance(X, cat).
+eats(X, seeds):- is_a(X, bird).
+is_a(X, bird):-an_instance(X, pinguin); an_instance(X, canary); is_a(pet, canary).
+is_a(X, mammal):-an_instance(X, cat); is_a(pet, cat); is_a(pet, dog).
+is_a(X, animal):-is_a(X, mammal); is_a(X, bird).
+is_a(pet, cat).
+is_a(pet, dog).
+is_a(pet, canary).
+has_part(X, tail):-is_a(X, mammal); is_a(X, bird).
+has_part(X, feather):-is_a(X, bird).
+has_part(X, wing):-is_a(X, bird).
+can(X, fly):-an_instance(X, canary).
+can(X, fly):-an_instance(X, penguin), !, fail.
+
+
+

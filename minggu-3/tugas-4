@@ -1,0 +1,8 @@
+lulusan(anas, sd).
+kebangsaan(anas, wni).
+lahir(anas, 1962).
+umur(X, A):-lahir(X, Z), tahun(Y), A is Y-Z.
+pns(X):-kebangsaan(X, wni), lulusan(X, sd), daftar(X, Y), lahir(X, Z), Y-Z =< 35.
+daftar(anas, 1990).
+pensiun(X):-umur(X, A), A > 60. 
+tahun(2023).
